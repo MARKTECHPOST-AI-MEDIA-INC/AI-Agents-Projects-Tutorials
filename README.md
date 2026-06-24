@@ -1,3 +1,11 @@
+<p align="center">
+  <a href="https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=ai-agents-projects-tutorials">
+    <img src="assets/atlas-cloud-logo.png" alt="Atlas Cloud" width="140" />
+  </a>
+  <br />
+  <sub><strong>Atlas Cloud</strong> Atlas Cloud provides OpenAI-compatible LLM APIs and async image/video generation APIs for AI agent tutorials, projects, and multimodal demos.</sub>
+</p>
+
 🤝 Show your support - give a ⭐️ if you liked the content
 
 ## Star History
