@@ -1,14 +1,16 @@
 🤝 Show your support - give a ⭐️ if you liked the content
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Marktechpost/AI-Tutorial-Codes-Included&type=date&legend=top-left)](https://www.star-history.com/#Marktechpost/AI-Tutorial-Codes-Included&type=date&legend=top-left)
-
 
 
 ### Agentic AI and Agents Tutorials/Implementations and Notebooks
 
 ▶ Build an Atlas Cloud Multimodal Generation Agent with Live Model Discovery, Schema Validation, and Async Polling [Codes](https://github.com/MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials/blob/main/Agentic%20AI%20Codes/atlascloud_multimodal_generation_agent_marktechpost.py)
+
+▶ Building Self-Evolving AI Agents with OpenSpace Using Skills, MCP, Lineage, and Low-Cost Reuse [Codes](https://github.com/MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials/blob/main/Agentic%20AI%20Codes/HKUDS_OpenSpace_Self_Evolving_AI_Agents_Marktechpost.ipynb) [Tutorial](https://www.marktechpost.com/2026/07/25/building-self-evolving-ai-agents-with-openspace-using-skills-mcp-lineage-and-low-cost-reuse/)
+
+▶ Research-Grade EdgeBench Analysis: AI Agent Benchmarking, Leaderboard Analytics, Scaling Laws, and Evaluation Metrics [Codes](https://github.com/MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials/blob/main/Data%20Analysis/EdgeBench_Advanced_Analysis_and_Scaling_Laws_Marktechpost.ipynb) [Tutorial](https://www.marktechpost.com/2026/07/22/research-grade-edgebench-analysis-ai-agent-benchmarking-leaderboard-analytics-scaling-laws-and-evaluation-metrics/)
+
+▶ How to Build a T4-Friendly Autonomous Data Science Agent with DeepAnalyze-8B, Sandboxed Code Execution, and Iterative Analysis [Codes](https://github.com/MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials/blob/main/AI%20Agents%20Codes/deepanalyze_8b_autonomous_data_science_agent_Marktechpost.ipynb) [Tutorial](https://www.marktechpost.com/2026/07/10/how-to-build-a-t4-friendly-autonomous-data-science-agent-with-deepanalyze-8b-sandboxed-code-execution-and-iterative-analysis/)
 
 ▶ Building a Stable Fable 5 Traces Workflow in Colab: Parsing Tool Calls, Auditing Data, and Training Baselines [Codes](https://github.com/MARKTECHPOST-AI-MEDIA-INC/AI-Agents-Projects-Tutorials/blob/main/Agentic%20AI%20Codes/fable5_agent_traces_colab_workflow_marktechpost.py) [Tutorial](https://www.marktechpost.com/2026/06/28/building-a-stable-fable-5-traces-workflow-in-colab-parsing-tool-calls-auditing-data-and-training-baselines/)
 
