@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1GBI8idC6yHrOU6wNTSoJMjGOUYh9oYXX
 """
 
-!pip install transformers torch accelerate bitsandbytes -q
+#!pip install transformers torch accelerate bitsandbytes -q
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
@@ -154,18 +154,18 @@ Respond ONLY with a JSON array."""
 
         return tasks
 
-def _create_default_tasks(self, goal: str) -> List[Dict]:
-        if any(word in goal.lower() for word in ['code', 'program', 'implement', 'algorithm']):
+    def _create_default_tasks(self, goal: str) -> List[Dict]:
+            if any(word in goal.lower() for word in ['code', 'program', 'implement', 'algorithm']):
+                return [
+                    {"id": "task_1", "description": f"Research and explain the concept: {goal}", "assigned_to": "researcher", "dependencies": []},
+                    {"id": "task_2", "description": f"Write code implementation for: {goal}", "assigned_to": "coder", "dependencies": ["task_1"]},
+                    {"id": "task_3", "description": f"Create documentation and examples", "assigned_to": "writer", "dependencies": ["task_2"]}
+                ]
             return [
-                {"id": "task_1", "description": f"Research and explain the concept: {goal}", "assigned_to": "researcher", "dependencies": []},
-                {"id": "task_2", "description": f"Write code implementation for: {goal}", "assigned_to": "coder", "dependencies": ["task_1"]},
-                {"id": "task_3", "description": f"Create documentation and examples", "assigned_to": "writer", "dependencies": ["task_2"]}
+                {"id": "task_1", "description": f"Research: {goal}", "assigned_to": "researcher", "dependencies": []},
+                {"id": "task_2", "description": f"Analyze findings and structure content", "assigned_to": "analyst", "dependencies": ["task_1"]},
+                {"id": "task_3", "description": f"Write comprehensive response", "assigned_to": "writer", "dependencies": ["task_2"]}
             ]
-        return [
-            {"id": "task_1", "description": f"Research: {goal}", "assigned_to": "researcher", "dependencies": []},
-            {"id": "task_2", "description": f"Analyze findings and structure content", "assigned_to": "analyst", "dependencies": ["task_1"]},
-            {"id": "task_3", "description": f"Write comprehensive response", "assigned_to": "writer", "dependencies": ["task_2"]}
-        ]
 
     def execute_task(self, task: Task, context: Dict[str, Any] = None) -> str:
         self.log(f"🤖 Executing {task.id} with {task.assigned_to}")
@@ -180,27 +180,27 @@ def _create_default_tasks(self, goal: str) -> List[Dict]:
 
         prompt = f"""{agent.system_prompt}
 
-Task: {task.description}{context_str}
+    Task: {task.description}{context_str}
 
-Provide a clear, concise response:"""
+    Provide a clear, concise response:"""
         result = self.llm.generate(prompt, max_tokens=250)
         task.result = result
         task.status = "completed"
         self.log(f"  ✓ Completed {task.id}")
         return result
 
-def synthesize_results(self, goal: str, results: Dict[str, str]) -> str:
-        self.log("🔄 Synthesizing final results")
-        results_text = "\n\n".join([f"Task {tid}:\n{res[:200]}" for tid, res in results.items()])
-        prompt = f"""Combine these task results into one final coherent answer.
+    def synthesize_results(self, goal: str, results: Dict[str, str]) -> str:
+            self.log("🔄 Synthesizing final results")
+            results_text = "\n\n".join([f"Task {tid}:\n{res[:200]}" for tid, res in results.items()])
+            prompt = f"""Combine these task results into one final coherent answer.
 
-Original Goal: {goal}
+    Original Goal: {goal}
 
-Task Results:
-{results_text}
+    Task Results:
+    {results_text}
 
-Final comprehensive answer:"""
-        return self.llm.generate(prompt, max_tokens=350)
+    Final comprehensive answer:"""
+            return self.llm.generate(prompt, max_tokens=350)
 
     def execute_goal(self, goal: str) -> Dict[str, Any]:
         self.log(f"\n{'='*60}\n🎬 Starting Manager Agent\n{'='*60}")
